@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: vpa-admission-controller
-  namespace: kube-system
+  namespace: tamic5
 spec:
   replicas: 1
   selector:
@@ -20,7 +20,7 @@ spec:
         runAsUser: 65534 # nobody
       containers:
         - name: admission-controller
-          image: registry.k8s.io/autoscaling/vpa-admission-controller:1.4.1
+          image: 192.1.6.82/tanzu/vpa-admission-controller:1.4.1
           imagePullPolicy: IfNotPresent
           env:
             - name: NAMESPACE
